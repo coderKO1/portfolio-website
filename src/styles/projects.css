@@ -1,64 +1,194 @@
 .projects {
-  padding: 1.8rem 0 2.8rem;
+  padding: 2.2rem 0 3.6rem;
 }
 
-.project-grid {
+.projects-hero {
+  position: relative;
+  margin-bottom: 3rem;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 920px;
+}
+
+.projects-kicker {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #5a5a5a;
+}
+
+.projects-title-wrap {
+  position: relative;
+}
+
+.projects-bg-word {
+  position: absolute;
+  top: -1.45rem;
+  left: 0;
+  font-size: clamp(3.1rem, 10.8vw, 8rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: rgba(255, 0, 0, 0.089);
+  user-select: none;
+  pointer-events: none;
+}
+
+.projects-hero h1 {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  font-size: clamp(2.2rem, 5.7vw, 5rem);
+  line-height: 0.97;
+  letter-spacing: -0.03em;
+}
+
+.projects-hero p {
+  margin: 0;
+  max-width: 58ch;
+  color: #4a4a4a;
+  line-height: 1.75;
+}
+
+.project-showcase-list {
+  display: grid;
+  gap: 2.6rem;
+}
+
+.project-showcase {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3.3rem);
+  align-items: center;
+  padding: clamp(1.2rem, 2.5vw, 1.8rem);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: #fff;
+}
+
+.project-visual {
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: block;
+}
+
+.project-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.project-visual:hover .project-image {
+  transform: scale(1.04);
+}
+
+.project-details {
+  display: grid;
   gap: 1rem;
 }
 
-.project-card {
+.project-label {
+  display: inline-flex;
+  width: fit-content;
+  font-size: 0.74rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #575757;
   border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
-  background: #fff;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-4px) scale(1.01);
-  box-shadow: var(--shadow);
-}
-
-.project-content {
-  padding: 1rem;
-}
-
-.project-content h2 {
-  font-size: 1.1rem;
-  margin: 0 0 0.5rem;
-}
-
-.project-content p {
-  color: var(--muted);
-  margin: 0;
-  line-height: 1.6;
-}
-
-.project-content button {
-  margin-top: 1rem;
-  border: 1px solid var(--text);
-  background: transparent;
   border-radius: 999px;
-  padding: 0.55rem 1rem;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  padding: 0.34rem 0.68rem;
 }
 
-.project-content button:hover {
+.project-details h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4.1vw, 3rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #0f0f0f;
+}
+
+.project-details p {
+  margin: 0;
+  color: #4b4b4b;
+  line-height: 1.75;
+  max-width: 50ch;
+}
+
+.project-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+}
+
+.project-tags li {
+  border: 1px solid #d8d8d8;
+  border-radius: 999px;
+  padding: 0.35rem 0.72rem;
+  font-size: 0.82rem;
+  color: #2d2d2d;
+  background: #fff;
+}
+
+.project-link {
+  margin-top: 0.45rem;
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #111;
   background: #111;
   color: #fff;
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  font-weight: 600;
+  transition: transform 0.24s ease, box-shadow 0.24s ease, background 0.24s ease;
 }
 
-@media (max-width: 980px) {
-  .project-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+.project-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(17, 17, 17, 0.16);
+  background: #000;
+}
+
+@media (max-width: 920px) {
+  .project-showcase {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-details h2 {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
   }
 }
 
 @media (max-width: 640px) {
-  .project-grid {
-    grid-template-columns: 1fr;
+  .projects {
+    padding: 1.45rem 0 2.8rem;
+  }
+
+  .projects-hero {
+    margin-bottom: 2rem;
+  }
+
+  .projects-bg-word {
+    top: -0.85rem;
+  }
+
+  .project-showcase {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  .project-visual {
+    border-radius: 12px;
+  }
+
+  .project-details {
+    gap: 0.85rem;
   }
 }

@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -28,6 +32,14 @@ a {
   text-decoration: none;
 }
 
+button,
+a,
+article,
+section,
+header {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
 .app-shell {
   min-height: 100vh;
   display: flex;
@@ -38,7 +50,7 @@ a {
   flex: 1;
   width: min(1120px, 92%);
   margin: 0 auto;
-  padding-top: 5.5rem;
+  padding-top: 1.2rem;
 }
 
 .section-header {
@@ -58,6 +70,13 @@ a {
 
 .page-enter {
   animation: fadeInUp 0.6s ease both;
+}
+
+@media (max-width: 640px) {
+  .main-content {
+    width: min(1120px, 94%);
+    padding-top: 0.75rem;
+  }
 }
 
 @keyframes fadeInUp {

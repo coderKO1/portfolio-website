@@ -1,73 +1,240 @@
 .about {
-  padding: 1.8rem 0 2.8rem;
+  padding: 2rem 0 3rem;
 }
 
-.about-grid {
+.about-hero {
+  position: relative;
+  margin-bottom: 2.5rem;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+  max-width: 900px;
+}
+
+.about-label {
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #595959;
+}
+
+.about-title-wrap {
+  position: relative;
+}
+
+.about-bg-word {
+  position: absolute;
+  top: -1.4rem;
+  left: 0;
+  font-size: clamp(3rem, 10vw, 7.4rem);
+  font-weight: 800;
+  color: rgba(255, 0, 0, 0.089);
+  letter-spacing: 0.05em;
+  user-select: none;
+  pointer-events: none;
+}
+
+.about-hero h1 {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  font-size: clamp(2.1rem, 5.5vw, 4.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.about-hero p {
+  margin: 0;
+  max-width: 58ch;
+  color: #454545;
+  line-height: 1.75;
 }
 
 .about-panel {
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1.2rem;
-  background: linear-gradient(135deg, #fff, #fcfcfc);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 18px;
+  padding: 1.35rem;
+  background: #fff;
 }
 
-.about-panel:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
+.about-stack-panel {
+  margin-bottom: 1.1rem;
 }
 
-.philosophy-panel {
-  grid-column: 1 / -1;
+.about-stack-panel h2,
+.experience-section h2 {
+  margin: 0;
+  font-size: 1.03rem;
 }
 
-.about-panel h2 {
-  margin-top: 0;
-}
-
-.chip-grid {
+.stack-flow {
+  margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.95rem 1.1rem;
+  align-items: flex-start;
 }
 
-.hover-chip {
-  border: 1px solid var(--border);
-  padding: 0.45rem 0.75rem;
-  border-radius: 999px;
-  color: var(--muted);
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+.stack-card {
+  width: clamp(240px, 30vw, 320px);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  border: 1px solid #ececec;
+  border-radius: 14px;
+  padding: 0.85rem;
+  background: #fff;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.24s ease, box-shadow 0.24s ease;
 }
 
-.hover-chip:hover {
-  background: #111;
-  color: #fff;
-  transform: translateY(-2px);
+.stack-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.12);
 }
 
-.stack-panel ul {
+.scatter-1 { margin-top: 6px; }
+.scatter-2 { margin-top: 22px; }
+.scatter-3 { margin-top: -2px; }
+.scatter-4 { margin-top: 26px; }
+.scatter-5 { margin-top: 10px; }
+.scatter-6 { margin-top: 18px; }
+
+.stack-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid #e7e7e7;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.stack-card-icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.stack-card-text h3 {
   margin: 0;
-  padding-left: 1.1rem;
-  line-height: 1.9;
+  font-size: 1.01rem;
+  color: #1f1f1f;
 }
 
-.philosophy-panel p {
-  margin-bottom: 0;
-  max-width: 70ch;
-  color: var(--muted);
-  line-height: 1.7;
+.stack-card-text p {
+  margin: 0.16rem 0 0;
+  font-size: 0.88rem;
+  color: #575757;
+  line-height: 1.35;
 }
 
-@media (max-width: 800px) {
-  .about-grid {
-    grid-template-columns: 1fr;
+.experience-section {
+  margin-top: 0.9rem;
+}
+
+.experience-timeline {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.experience-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.8rem 0;
+}
+
+.experience-logo-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  border: 1px solid #ececec;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  overflow: hidden;
+}
+
+.experience-logo-wrap img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.experience-copy h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.experience-company {
+  margin: 0.16rem 0;
+  color: #505050;
+  font-size: 0.93rem;
+}
+
+.experience-description {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6a6a6a;
+  line-height: 1.45;
+}
+
+.experience-date {
+  font-size: 0.82rem;
+  color: #3f3f3f;
+  white-space: nowrap;
+}
+
+@media (max-width: 920px) {
+  .stack-card {
+    width: calc(50% - 0.6rem);
+    min-width: 250px;
   }
 
-  .philosophy-panel {
-    grid-column: auto;
+  .experience-row {
+    grid-template-columns: auto 1fr;
+    align-items: flex-start;
+  }
+
+  .experience-date {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .about {
+    padding-top: 1.4rem;
+  }
+
+  .about-hero {
+    margin-bottom: 1.8rem;
+  }
+
+  .about-bg-word {
+    top: -0.8rem;
+  }
+
+  .stack-flow {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .stack-card {
+    width: 100%;
+  }
+
+  .scatter-1,
+  .scatter-2,
+  .scatter-3,
+  .scatter-4,
+  .scatter-5,
+  .scatter-6 {
+    margin-top: 0;
   }
 }
