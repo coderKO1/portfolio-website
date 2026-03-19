@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SectionBubble from './components/SectionBubble';
+import Loader from './components/Loader';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
@@ -12,6 +13,7 @@ const sections = ['home', 'about', 'projects', 'contact'];
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [loading, setLoading] = useState(true);
 
   const observerOptions = useMemo(
     () => ({
@@ -23,6 +25,10 @@ const App = () => {
   );
 
   useEffect(() => {
+    if (loading) {
+      return undefined;
+    }
+
     const sectionElements = sections
       .map((id) => document.getElementById(id))
       .filter(Boolean);
@@ -42,7 +48,11 @@ const App = () => {
     sectionElements.forEach((section) => observer.observe(section));
 
     return () => observer.disconnect();
-  }, [observerOptions]);
+  }, [loading, observerOptions]);
+
+  if (loading) {
+    return <Loader onComplete={() => setLoading(false)} />;
+  }
 
   return (
     <div className="app-shell">

@@ -1,4 +1,7 @@
 import { motion } from 'framer-motion';
+import blog from '../images/blog.png';
+import delifery from '../images/delifery.png';
+import taxshield from '../images/taxshield.png';
 import '../styles/projects.css';
 
 const projects = [
@@ -6,21 +9,21 @@ const projects = [
     title: 'Delifery',
     description:
       'A community-based delivery system that connects local riders with users for efficient last-mile logistics.',
-    image: '/project-1.svg',
+    image: delifery,
     github: 'https://github.com/coderKO1/DELIFERY.git',
   },
   {
     title: 'TaxShield',
     description:
       'A fintech tool that automates tax calculations and compliance for SMEs.',
-    image: '/project-2.svg',
+    image: taxshield,
     github: 'https://github.com/coderKO1/UBATAXPROJECT.git',
   },
   {
-    title: 'The Blog',
+    title: 'Blog',
     description:
       'A modern blog platform with content management and interactive user features.',
-    image: '/project-3.svg',
+    image: blog,
     github: 'https://github.com/coderKO1/blog-project.git',
   },
 ];
@@ -34,7 +37,7 @@ const projectMeta = {
     label: 'Fintech Product',
     tags: ['React', 'Fintech', 'Compliance'],
   },
-  'The Blog': {
+  Blog: {
     label: 'Content Platform',
     tags: ['React', 'CMS', 'UX'],
   },
@@ -105,7 +108,7 @@ const Projects = () => {
 
           return (
             <motion.article
-              className="project-showcase"
+              className="project-showcase project-card"
               key={project.title}
               variants={sectionVariant}
               initial="hidden"

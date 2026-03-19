@@ -191,4 +191,15 @@
   .project-details {
     gap: 0.85rem;
   }
+  .project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .project-card:hover .project-image {
+    transform: scale(1.03);
+  }
 }
