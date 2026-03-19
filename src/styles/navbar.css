@@ -11,7 +11,7 @@
 }
 
 .nav-container {
-  width: min(1120px, 92%);
+  width: min(800px, 92%);
   margin: 0 auto;
   height: 4.75rem;
   display: flex;

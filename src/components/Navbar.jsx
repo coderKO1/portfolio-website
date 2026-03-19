@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import '../styles/navbar.css';
-import logo from '../images/my-logo.png';
-
 
 const navItems = [
   { label: 'About', to: '#about', id: 'about' },
@@ -32,10 +30,13 @@ const Navbar = ({ activeSection = 'about' }) => {
   return (
     <header className="navbar">
       <nav className="nav-container" aria-label="Main navigation">
+
+        {/* LOGO */}
         <a href="#about" className="brand" onClick={closeMenu}>
-          <img src={logo} alt="logo" className="logo-img" />
+          <img src="/my-logo.png" alt="logo" className="logo-img" />
         </a>
 
+        {/* HAMBURGER */}
         <button
           className={`hamburger ${isOpen ? 'open' : ''}`}
           aria-expanded={isOpen}
@@ -48,6 +49,7 @@ const Navbar = ({ activeSection = 'about' }) => {
           <span />
         </button>
 
+        {/* DESKTOP NAV */}
         <ul className="nav-links nav-links-desktop">
           {navItems.map((item) => (
             <li key={item.id}>
@@ -55,8 +57,6 @@ const Navbar = ({ activeSection = 'about' }) => {
                 href={item.to}
                 className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
                 onClick={closeMenu}
-                target={item.external ? '_blank' : undefined}
-                rel={item.external ? 'noopener noreferrer' : undefined}
               >
                 {item.label}
               </a>
@@ -64,8 +64,9 @@ const Navbar = ({ activeSection = 'about' }) => {
           ))}
         </ul>
 
+        {/* MOBILE NAV */}
         <AnimatePresence>
-          {isOpen ? (
+          {isOpen && (
             <motion.ul
               className="nav-links nav-links-mobile open"
               variants={mobileMenu}
@@ -79,16 +80,15 @@ const Navbar = ({ activeSection = 'about' }) => {
                     href={item.to}
                     className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
                     onClick={closeMenu}
-                    target={item.external ? '_blank' : undefined}
-                    rel={item.external ? 'noopener noreferrer' : undefined}
                   >
                     {item.label}
                   </a>
                 </li>
               ))}
             </motion.ul>
-          ) : null}
+          )}
         </AnimatePresence>
+
       </nav>
     </header>
   );

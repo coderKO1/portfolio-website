@@ -79,24 +79,27 @@ const About = () => {
         animate="visible"
         variants={introVariant}
       >
-        <motion.span className="about-label" initial="hidden" animate="visible" variants={introVariant}>
-          About me
-        </motion.span>
+       
 
         <motion.div className="about-title-wrap" initial="hidden" animate="visible" variants={introVariant}>
           <span className="about-bg-word" aria-hidden="true">
             PROFILE
           </span>
           <h1>
-            Building clean digital
+            BUILDING CLEAN DIGITAL
             <br />
-            products with purpose.
+            PRODUCTS WITH PURPOSE
           </h1>
         </motion.div>
 
         <motion.p initial="hidden" animate="visible" variants={introVariant}>
-          I combine strong front-end craftsmanship with product thinking to ship
-          interfaces that are clear, scalable, and delightful to use.
+        I’m Ifeoluwa Olusoga.
+
+I’m a developer passionate about building clean and user-friendly digital experiences. I enjoy turning ideas into real products that people can interact with.
+
+For me, it’s not just about writing code, it’s about creating solutions that are simple, effective, and meaningful.
+
+I’m constantly learning, improving, and growing as a software engineer while working on impactful projects.
         </motion.p>
       </motion.header>
 

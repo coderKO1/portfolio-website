@@ -59,6 +59,15 @@
 
 .about-stack-panel {
   margin-bottom: 1.1rem;
+  border: none !important;
+  outline: none;
+  box-shadow: none !important;
+}
+
+.about-stack-panel:focus,
+.about-stack-panel:focus-visible {
+  outline: none;
+  box-shadow: none !important;
 }
 
 .about-stack-panel h2,

@@ -6,21 +6,21 @@ import '../styles/projects.css';
 
 const projects = [
   {
-    title: 'Delifery',
+    title: 'DELIFERY',
     description:
       'A community-based delivery system that connects local riders with users for efficient last-mile logistics.',
     image: delifery,
     github: 'https://github.com/coderKO1/DELIFERY.git',
   },
   {
-    title: 'TaxShield',
+    title: 'TAXSHIELD',
     description:
       'A fintech tool that automates tax calculations and compliance for SMEs.',
     image: taxshield,
     github: 'https://github.com/coderKO1/UBATAXPROJECT.git',
   },
   {
-    title: 'Blog',
+    title: 'BLOG',
     description:
       'A modern blog platform with content management and interactive user features.',
     image: blog,
@@ -29,15 +29,15 @@ const projects = [
 ];
 
 const projectMeta = {
-  Delifery: {
+  DELIFERY: {
     label: 'Client Project',
     tags: ['React', 'Logistics', 'Web App'],
   },
-  TaxShield: {
+  TAXSHIELD: {
     label: 'Fintech Product',
     tags: ['React', 'Fintech', 'Compliance'],
   },
-  Blog: {
+  BLOG: {
     label: 'Content Platform',
     tags: ['React', 'CMS', 'UX'],
   },
